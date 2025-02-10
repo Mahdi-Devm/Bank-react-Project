@@ -1,0 +1,211 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  background-color: #12222e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+  width: 100%;
+  padding: 20px;
+}
+
+.Bank {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 25px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+.Bank.open {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.Header-Input-user,
+.Header-Input-user-full {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  width: 100%;
+
+  border-radius: 20px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.Header-Input-user {
+  max-width: 400px;
+  opacity: 1;
+  transform: translateY(-20px) scale(0.95);
+}
+
+.Header-Input-user-full {
+  max-width: 740px;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.Header-Input-user input,
+.Header-Input-user-full input,
+.Select-User select {
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  width: 100%;
+  font-size: 16px;
+  color: #333;
+  background-color: #ecf0f1;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Header-Input-user input:focus,
+.Header-Input-user-full input:focus,
+.Select-User select:focus {
+  outline: none;
+  background-color: #fff;
+
+  transform: scale(1.02);
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(45deg, #4a90e2, #1f78d1);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background: linear-gradient(45deg, #1f78d1, #4a90e2);
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+button:disabled {
+  background-color: #c2c2c2;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.OutPut {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4a90e2;
+  color: white;
+  border-radius: 20px;
+  padding: 12px 30px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.Body-Input-User {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.Input,
+.Iput-Val {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  width: 45%;
+  transition: all 0.3s ease;
+}
+
+.Input:focus,
+.Iput-Val:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+}
+
+.Op {
+  opacity: 0.5;
+}
+
+.Body-Bank-user {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.6s ease;
+}
+
+.Body-Bank-user.open {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.children-box {
+  width: 300px;
+}
+
+.children-list {
+  list-style-type: none;
+  padding-left: 0;
+  width: 300px;
+}
+
+.children-list li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.children-list input {
+  margin-right: 10px;
+}
+
+.children-text {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .Bank {
+    flex-direction: column;
+    width: 90%;
+    padding: 20px;
+  }
+
+  .Header-Input-user,
+  .Body-Input-User {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .Input,
+  .Iput-Val,
+  button {
+    width: 100%;
+  }
+
+  .children-box {
+    width: 100%;
+  }
+}
